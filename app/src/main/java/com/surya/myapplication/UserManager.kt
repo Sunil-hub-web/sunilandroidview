@@ -29,16 +29,10 @@ class UserManager(context : Context) {
         }
     }
 
-    val userNameFlow: Flow<String> = dataStore.data.map {
-        it[USER_NAME_KEY] ?:""
-    }
+    val userNameFlow: Flow<String> = dataStore.data.map { it[USER_NAME_KEY] ?:""}
 
-    val userAgeFlow: Flow<String> = dataStore.data.map {
-        it[USER_AGE_KEY] ?:""
-    }
+    val userAgeFlow: Flow<String> = dataStore.data.map { it[USER_AGE_KEY] ?:"" }
 
-    val userGenderFlow: Flow<Boolean> = dataStore.data.map {
-        it[USER_GENDER_KEY] ?: false
-    }
+    val userGenderFlow: Flow<Boolean> = dataStore.data.map { it[USER_GENDER_KEY] ?: false }
 
 }
